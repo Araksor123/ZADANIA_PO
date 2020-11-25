@@ -1,0 +1,238 @@
+2.1
+static void Main(string[] args)
+        {
+            double C, F;
+            Console.WriteLine("Podaj temp. w Celcjuszach:");
+            C = double.Parse(Console.ReadLine());
+            F = (C*9/5) + 32;
+            Console.WriteLine(F);
+            Console.ReadKey();
+        }
+--------------------------------------------------------------------------------------------------------------------------------------
+2.2
+static void Main(string[] args)
+        {
+            double a, b, c, delta;
+
+            Console.WriteLine("Podaj A:");
+            a = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj B:");
+            b = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj C:");
+            c = double.Parse(Console.ReadLine());
+
+            delta = (b * b) - (4 * a * c);
+            Console.WriteLine(delta);
+            Console.ReadKey();
+        }
+--------------------------------------------------------------------------------------------------------------------------------------
+2.3
+static void Main(string[] args)
+        {
+            double waga, wzrost, BMI;
+
+            Console.WriteLine("Podaj wage w kg:");
+            waga = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj wzrost w metrach:");
+            wzrost = double.Parse(Console.ReadLine());
+
+            BMI = waga / (wzrost*wzrost);
+
+            Console.WriteLine(BMI);
+            Console.ReadKey();
+        }
+--------------------------------------------------------------------------------------------------------------------------------------
+2.4
+int x = 100;
+Console.WriteLine(++x * 2);
+Wyświetli się liczba 202(odp A)
+--------------------------------------------------------------------------------------------------------------------------------------
+2.5
+int x = 2, y = 3;
+x *= y * 2;
+X będzie równy 12(odp D)
+--------------------------------------------------------------------------------------------------------------------------------------
+2.6
+int x, y = 4;
+x = (y -= 2);
+x = y++;
+x = y--; 
+X będzie miał wartość 3
+--------------------------------------------------------------------------------------------------------------------------------------
+2.7
+int x, y = 5;
+x = ++y * 2;
+x = y++;
+x = y--;
+Console.WriteLine(++y);
+Wyświetli się liczba 7
+--------------------------------------------------------------------------------------------------------------------------------------
+2.8
+bool x;
+int y = 1, z = 1;
+x = (y == 1 && z++ == 1);
+Wynikiem będzie: a) x=true, y=1, z=2
+--------------------------------------------------------------------------------------------------------------------------------------
+2.9
+a) wynik=False x=2 y=4 z=2
+b) wynik=False x=2 y=5 z=2
+c) wynik=False x=2 y=5 z=1
+d) wynik=True x=1 y=3 z=4
+e) wynik=True x=1 y=4 z=4
+f) wynik=True x=1 y=4 z=5
+--------------------------------------------------------------------------------------------------------------------------------------
+2.10
+static void Main(string[] args)
+        {
+            int powierzchnia = 100, osoby = 10;
+            double gestoscZaludnienia = (double) osoby / powierzchnia;
+            Console.WriteLine(gestoscZaludnienia);
+        }
+--------------------------------------------------------------------------------------------------------------------------------------
+3.1
+static void Main(string[] args)
+        {
+            int rok;
+            Console.WriteLine("Podaj rok:");
+            rok = int.Parse(Console.ReadLine());
+            if (rok % 400 == 0 || (rok % 4 == 0 && rok % 100 != 0) )
+                Console.WriteLine("Podany rok jest rokiem przestepnym");
+            else
+                Console.WriteLine("Podany rok nie jest rokiem przestepnym");
+        }
+--------------------------------------------------------------------------------------------------------------------------------------
+3.2
+static void Main(string[] args)
+        {
+            int a, b;
+            Console.WriteLine("Podaj 1 liczbe");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj 2 liczbe");
+            b = int.Parse(Console.ReadLine());
+            if ( a % b == 0 )
+                Console.WriteLine("Liczba nr2 jest dzielnikiem liczby nr1");
+            else
+                Console.WriteLine("Liczba nr2 nie jest dzielnikiem liczby nr1");
+        }
+--------------------------------------------------------------------------------------------------------------------------------------
+3.3
+static void Main(string[] args)
+        {
+            int a, b, c;
+            Console.WriteLine("Podaj 1 liczbe");
+            a = int.Parse(Console.ReadLine());
+            int najw = a;
+            Console.WriteLine("Podaj 2 liczbe");
+            b = int.Parse(Console.ReadLine());
+            if (b > najw)
+                najw = b;
+            Console.WriteLine("Podaj 3 liczbe");
+            c = int.Parse(Console.ReadLine());
+            if (c > najw)
+                najw = c;
+
+            Console.WriteLine("Najwieksza liczba jest liczba: " + najw);  
+        }
+--------------------------------------------------------------------------------------------------------------------------------------
+3.4
+static void Main(string[] args)
+        {
+            double a, b;
+            string znak;
+            Console.WriteLine("Podaj 1 liczbe");
+            a = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj 2 liczbe");
+            b = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj ktorys znak: + - * /");
+            znak = (Console.ReadLine());
+            if (znak == "+")
+                Console.WriteLine(a + b);
+            else if (znak == "-")
+                Console.WriteLine(a - b);
+            else if (znak == "*")
+                Console.WriteLine(a * b);
+            else if (znak == "/")
+                if( b == 0)
+                    Console.WriteLine("nie dzielimy przez zero!");
+                else
+                    Console.WriteLine(a / b);
+        }
+--------------------------------------------------------------------------------------------------------------------------------------
+3.5
+static void Main(string[] args)
+        {
+            double a, b, c, delta;
+
+            Console.WriteLine("Podaj A:");
+            a = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj B:");
+            b = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj C:");
+            c = double.Parse(Console.ReadLine());
+            
+            delta = (b * b) - (4 * a * c);
+            
+            if ( delta < 0 )
+                Console.WriteLine("Rownanie nie ma pierwiastkow");
+            else if (delta > 0)
+                Console.WriteLine("Rownanie ma 2 rozwiazania");
+            else
+                Console.WriteLine("Rownanie ma 1 rozwiazanie");
+            Console.ReadKey();
+        }
+--------------------------------------------------------------------------------------------------------------------------------------
+3.6
+static void Main(string[] args)
+        {
+            double waga, wzrost, BMI;
+
+            Console.WriteLine("Podaj wage w kg:");
+            waga = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj wzrost w metrach:");
+            wzrost = double.Parse(Console.ReadLine());
+
+            BMI = waga / (wzrost * wzrost);
+
+            Console.WriteLine(BMI);
+            if ( BMI < 18.5)
+                Console.WriteLine("niedowaga");
+            else if (BMI >= 18.5 && BMI <= 24.99)
+                Console.WriteLine("wartosc prawidlowa");
+            else
+                Console.WriteLine("nadwaga");
+            Console.ReadKey();
+        }
+--------------------------------------------------------------------------------------------------------------------------------------
+3.7
+
+--------------------------------------------------------------------------------------------------------------------------------------
+3.8
+ static void Main(string[] args)
+        {
+            double srednia;
+
+            Console.WriteLine("Podaj srednia ocen od 2 do 5:");
+            srednia = double.Parse(Console.ReadLine());
+
+            if (srednia >= 2 && srednia < 4)
+                Console.WriteLine("Kwota stypendium to 0zl");
+            else if (srednia >= 4 && srednia < 4.8)
+                Console.WriteLine("Kwota stypendium to 350zl");
+            else if (srednia >= 4.80 && srednia <= 5)
+                Console.WriteLine("Kwota stypendium to 550zl");
+        }
+--------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
