@@ -1,0 +1,122 @@
+Kolokwium 1 Programowanie strukturalne Bartosz Napiórkowski
+
+ZAD 1
+
+using System;
+
+namespace PRACE_DOMOWE
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b, x1, x2, x0, delta;
+            double c = -4;
+            Console.WriteLine("Podaj A:");
+            a = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj B:");
+            b = double.Parse(Console.ReadLine());
+
+            delta = (b * b) - (4 * a * c);
+            if (a == 0)
+                Console.WriteLine("A musi byc rozne od zera!");
+            else if (delta < 0)
+                Console.WriteLine("Rownanie nie ma pierwiastkow");
+            else if (delta > 0)
+            {
+                Console.WriteLine("Rownanie ma 2 rozwiazania");
+                x1 = (-b - Math.Sqrt(delta)) / 2 * a;
+                x2 = (-b + Math.Sqrt(delta)) / 2 * a;
+                Console.WriteLine(x1);
+                Console.WriteLine(x2);
+            }
+            else
+            {
+                Console.WriteLine("Rownanie ma 1 rozwiazanie:");
+                x0 = -b / (2 * a);
+                Console.WriteLine(x0);
+            }
+            Console.ReadKey();
+        }
+    }
+}
+------------------------------------------------
+zad 2
+
+using System;
+
+namespace PRACE_DOMOWE
+{
+    class Program
+    {
+        static void zadanie(int a, int b, int c, int d, int e, int f)
+        {
+            double y;
+            int wynik = 0;
+            Console.WriteLine("Podaj liczbe y:");
+            y = double.Parse(Console.ReadLine());
+            if (y >= a && y <= b)
+                Console.WriteLine("Liczba y miesci sie w pierwszym przedziale [a,b]!");
+            else if (y >= c && y <= d)
+                Console.WriteLine("Liczba y miesci sie w drugim przedziale [c,d]!");
+            else if (y >= e && y <= f)
+                Console.WriteLine("Liczba y miesci sie w trzecim przedziale [e,f]!");
+            else
+                Console.WriteLine("Liczba y nie nalezy do zadnego przedzialu!");
+        }
+        static void Main(string[] args)
+        {
+            int a, b, c, d, e, f;
+            Console.WriteLine("Podaj 6 liczb calkowitych w ROSNACEJ kolejnosci:");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c = int.Parse(Console.ReadLine());
+            d = int.Parse(Console.ReadLine());
+            e = int.Parse(Console.ReadLine());
+            f = int.Parse(Console.ReadLine());
+            zadanie(a, b, c, d, e, f);
+            Console.ReadKey();
+        }
+    }
+}
+------------------------------------------------
+zad 3
+
+using System;
+
+namespace PRACE_DOMOWE
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n;
+            double rzeczyw;
+            double min = 0;
+            double max = 0;
+
+            Console.WriteLine("Podaj liczbe naturalna:");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("Podaj liczbe rzeczywista:");
+                rzeczyw = double.Parse(Console.ReadLine());
+                if (i == 0)
+                {
+                    min = rzeczyw;
+                    max = rzeczyw;
+                }
+                else if (rzeczyw < min)
+                    min = rzeczyw;
+                else if (rzeczyw > max)
+                    max = rzeczyw;
+            }
+            Console.WriteLine("Najwieksza liczba rzeczywista jest:");
+            Console.WriteLine(max);
+            Console.WriteLine("Najmniejsza liczba rzeczywista jest:");
+            Console.WriteLine(min);
+            Console.ReadKey();
+        }
+    }
+}
